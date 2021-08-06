@@ -1,0 +1,15 @@
+mkdir ex01
+cd ex01
+touch testShell00
+echo "1111111111111111111111111111111111111111" >testShell00
+touch -t 202106012342 testShell00
+chmod 455 testShell00
+tar -cf testShell00.tar testShell00
+cd ..
+open .       #удалить лишний файл через Finder
+
+-----
+Проверка:
+cd ex01
+tar -xvf testShell00.tar
+ls -l

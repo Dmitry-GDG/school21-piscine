@@ -1,0 +1,3 @@
+Проверка:
+cd ex05
+bash git_commit.sh | cat -e

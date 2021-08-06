@@ -1,0 +1,7 @@
+Проверка:
+cd ex08
+ls
+touch ff~ dd~ #ss# #ee#
+ls
+bash clean
+ls

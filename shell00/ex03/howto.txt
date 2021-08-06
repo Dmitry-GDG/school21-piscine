@@ -1,0 +1,11 @@
+kinit
+(enter password)
+klist
+(выделяем и копируем с экрана весь текс билета)
+mkdir ex03
+cd ex03
+vim klist.txt
+comand v    #(вставляем скопированный с экрана текст)
+:wq
+cat klist.txt
+cd ..
