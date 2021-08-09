@@ -91,7 +91,7 @@ void	ft_sorted_list_insert(t_list **begin_list, void *data, int (*cmp)())
 *	}
 *	free(list);
 *	return (0);
-*}
+*}*/
 /* call it:
 * gcc -Wall -Wextra -Werror ft_sorted_list_insert.c ft_create_elem.c \
 * ft_list_push_back.c && ./a.out "6qwe" "5qwe" "qwe" "asd" "abc" "qae" */

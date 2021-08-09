@@ -97,7 +97,7 @@ void	ft_sorted_list_merge(t_list **begin_list1, t_list *begin_list2, \
 *	free(list1);
 *	free(list2);
 *	return (0);
-*}
+*}*/
 /* call it:
 * gcc -Wall -Wextra -Werror ft_sorted_list_merge.c ft_create_elem.c \
 * ft_list_push_back.c && ./a.out "6qwe" "5qwe" "qwe" "asd" "abc" "qae" */
