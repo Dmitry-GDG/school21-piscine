@@ -46,6 +46,24 @@ void	btree_apply_infix(t_btree *root, void (*applyf)(void *))
 *	write (1, "\n", 1);
 *}
 *
+*void my_btree_free2(t_btree **node) 
+*{
+*	if (*node) 
+*	{
+*		my_btree_free2(&((*node)->left));
+*		my_btree_free2(&((*node)->right));
+*		free(*node);
+*		*node = NULL;
+*	}
+*}
+*
+*void my_btree_free(t_btree *node) 
+*{
+*	if (node)
+*		my_btree_free2(&(node));
+*	free(node);
+*}
+*
 *int	main(void)
 *{
 *	t_btree	*node;
@@ -66,7 +84,7 @@ void	btree_apply_infix(t_btree *root, void (*applyf)(void *))
 *	node->right->right->left = btree_create_node("main->right>right->left");
 *	node->right->right->right = btree_create_node("main->right->right->right");
 *	btree_apply_infix(node, (void *)&ft_putstr);
-*	free (node);
+*	my_btree_free(node);
 *	return (0);
 *}*/
 /* call it:

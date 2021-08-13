@@ -31,15 +31,33 @@ t_btree	*btree_create_node(void *item)
 *#include <stdlib.h>
 *t_btree	*btree_create_node(void *item);
 *
+*void my_btree_free2(t_btree **node) 
+*{
+*	if (*node) 
+*	{
+*		my_btree_free2(&((*node)->left));
+*		my_btree_free2(&((*node)->right));
+*		free(*node);
+*		*node = NULL;
+*	}
+*}
+*
+*void my_btree_free(t_btree *node) 
+*{
+*	if (node)
+*		my_btree_free2(&(node));
+*	free(node);
+*}
+*
 *int	main(void)
 *{
-*	t_btree	*btree;
+*	t_btree	*node;
 *
-*	btree = btree_create_node("Hello, word!");
-*	printf("btree->left = %s\n", (char *)btree->left);
-*	printf("btree->right = %s\n", (char *)btree->right);
-*	printf("btree->item = %s\n", (char *)btree->item);
-*	free(btree);
+*	node = btree_create_node("Hello, word!");
+*	printf("node->left = %s\n", (char *)node->left);
+*	printf("node->right = %s\n", (char *)node->right);
+*	printf("node->item = %s\n", (char *)node->item);
+*	my_btree_free(node);
 *	return (0);
 *}*/
 /* call it:
