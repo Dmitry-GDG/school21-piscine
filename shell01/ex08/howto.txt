@@ -1,0 +1,20 @@
+Напишите командную строку, 
+которая берет числа из переменных 
+FT_NBR1 в базе’\" ?!
+и FT_NBR2 в базе mrdoc 
+и отображает их сумму в базе gtaio luSnemf.
+
+
+Test:
+export FT_NBR1=\\\'\?\"\\\"\'\\
+export FT_NBR2=rcrdmddd
+chmod +x add_chelou.sh
+bash add_chelou.sh
+
+Output:
+Salut
+
+More info:
+man tr
+man bc (/VARIABLES)
+https://www.shellscript.sh/escape.html

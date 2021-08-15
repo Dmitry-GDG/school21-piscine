@@ -1,0 +1,41 @@
+Напишите командную строку, которая отображает MAC-адреса вашего компьютера. 
+Каждый адрес будет сопровождаться переводом строки.
+man ifconfig
+
+Создадим файл скрипта:
+touch MAC.sh
+
+Запишем в скрипт это:
+#!/bin/sh
+ifconfig | grep "ether" | sed "s/ether //" | cut -c 2- | tr -d ' ' | cut -b 1-17
+
+или это:
+#!/bin/sh
+ifconfig | grep -o -E '([[:xdigit:]]{2}:){5}[[:xdigit:]]{1,2}'
+
+или это:
+#!/bin/sh
+ifconfig | grep "ether" | sed 's/\(.*\)ether //g' | cut -b 1-17
+
+
+Test:
+chmod +x MAC.sh
+cd ..
+bash MAC.sh
+
+Output:
+a list of MAC directions in this format:
+38:f9:d3:14:39:6d
+ea:00:c4:c9:15:00
+ea:00:c4:c9:15:01
+ea:00:c4:c9:15:00
+a6:83:e7:12:b1:cb
+a4:83:e7:12:b1:cb
+06:83:e7:12:b1:cb
+62:5a:ab:87:90:a1
+(these are the MAC directions for my computer, they should be different in yours)
+
+More info:
+man ifconfig
+man grep
+man cut

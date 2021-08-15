@@ -1,0 +1,21 @@
+Напишите командную строку, 
+которая ищет в текущем каталоге и во всех его подкаталогах все файлы, 
+имена которых заканчиваются на «.sh» (без кавычек) 
+и отображает только их имена, без .sh.
+
+Test:
+chmod +x find_sh.sh
+cd ..
+bash ex02/find_sh.sh
+
+Output:
+count_files$
+print_groups$
+find_sh$
+MAC$
+skip$
+r_dwssap$
+
+More info:
+man find
+man basename

@@ -1,0 +1,23 @@
+В этом упражнении вы напишете короткий сценарий оболочки, 
+который перечислит все существующие файлы, 
+игнорируемые вашим репозиторием Git
+
+Пример:
+
+%> bash git_ignore.sh | cat -e
+.DS_Store$
+mywork.c~$
+%
+
+
+Test: 
+cat git_ignore.sh 
+
+Output: 
+#! /bin/sh 
+git ls-files $(git rev-parse --show-toplevel) -i -o --exclude-standard
+
+For more info:
+man gitignore
+man git-ls-files
+man git-rev-parse

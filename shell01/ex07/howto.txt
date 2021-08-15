@@ -1,0 +1,32 @@
+Напишите командную строку, 
+которая отображает вывод cat/etc/passwd, удаляя комментарии, 
+отображает каждую вторую строку, начиная со второй, 
+инвертируя каждый логин и сортируя в обратном порядке, 
+сохраняя только логины включенными между FT_LINE1 и FT_LINE2 включительно, 
+разделенных символом «,» (без кавычек) и заканчивающихся символом «.».
+
+Напишите командную строку, 
+которая отображает вывод команды cat / etc / passwd, удаляя комментарии, 
+каждую другую строку, начиная со второй строки, 
+инвертируя каждый логин и сортируя в обратном алфавитном порядке, 
+и сохраняя только логины между FT_LINE1 и FT_LINE2 включительно, 
+и они должны быть разделены символом ","(без кавычек), 
+а вывод должен заканчиваться символом".".
+
+Example: Between lines 7 and 15, the result should be something like this :     
+$> ./r_dwssap.sh
+sstq_, sorebrek_brk_, soibten_, sergtsop_, scodved_, rlaxcm_, rgmecived_, revreswodniw_, revressta_
+.$>
+
+
+Test: 
+# chmod +x r_dwssap.sh export FT_LINE1=2 export FT_LINE1=9 (you can change this range as you like) bash r_dwssap.sh
+chmod +x r_dwssap.sh && export FT_LINE1=2 && export FT_LINE1=9 && bash r_dwssap.sh
+
+Output:
+yapelppa_, www_, vamalc_, toorsmvc_, toor, tocevod_, tnegaevitpac_, svc_.%
+(the users may differ)
+
+More info:
+https://www.tutorialspoint.com/unix/unix-regular-expressions.htm
+man tr

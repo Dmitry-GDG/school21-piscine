@@ -1,3 +1,17 @@
+Создайте сценарий оболочки, который отображает 
+идентификаторы последних 5 коммитов вашего репозитория git:
+
 Проверка:
 cd ex05
 bash git_commit.sh | cat -e
+
+
+Test: 
+cat git_commit.sh 
+
+Output: 
+# /bin/sh 
+git log --format="%H" -n 5
+
+For more info:
+man git-log (/PRETTY FORMATS)

@@ -1,0 +1,29 @@
+Напишите командную строку, 
+которая отображает через ls -l каждую следующую строку, начиная с первой.
+
+ls -l | awk 'NR % 2 == 0'
+или
+ls -l | sed -n 'n;p'
+
+если надо начать со второй, то 
+ls -l | awk 'NR % 2 == 1'
+или
+ls -l | sed 'n; d'
+или
+ls -l | sed '2!n;d'
+
+
+Test: 
+chmod +x skip.sh 
+cd .. 
+bash ex06/skip.sh
+
+Output:
+total 2743
+drwxr-xr-x 2 XX XX 4096 XX XX ex01
+rwxr-xr-x  2 XX XX 4096 XX XX ex03
+rwxr-xr-x  2 XX XX 4096 XX XX ex05
+rwxr-xr-x  2 XX XX 4096 XX XX ex07
+
+More info:
+man awk (/NR)

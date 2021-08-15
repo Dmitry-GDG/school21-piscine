@@ -1,0 +1,19 @@
+Напишите командную строку, которая будет отображать список групп, 
+членом которых является логин, содержащийся в переменной среды FT_USER. 
+Через запятую без пробелов.
+
+Например:
+для FT_USER = nours результатом будет "god, root, admin, master, nours, bocal" (без кавычек)
+
+Test:
+chmod +x print_groups.sh
+./print_groups.sh
+
+Output:
+2019,everyone,netaccounts,_developer
+// this should be the output for FT_USER="", but it may vary in different machines
+
+More info:
+man id
+https://www.tutorialspoint.com/unix/unix-regular-expressions.htm
+man tr
